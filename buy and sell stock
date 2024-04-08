@@ -1,0 +1,16 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        buy=prices[0]
+        diff=0
+        for price in prices[1:]:
+            if price < buy:
+                buy = price
+            elif price - buy > diff:
+                diff = price - buy
+
+        return diff
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        
